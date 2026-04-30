@@ -30,6 +30,7 @@ add_library(core_lib STATIC
     src/platform/tray.cpp
     src/platform/wallpaper_host.cpp
     src/platform/session_monitor.cpp
+    src/platform/process.cpp
 )
 
 target_include_directories(core_lib PUBLIC
@@ -66,6 +67,10 @@ add_executable(MapleWallpaperConfig
 )
 
 target_link_libraries(MapleWallpaperConfig PRIVATE core_lib)
+
+set_target_properties(MapleWallpaperConfig PROPERTIES
+    WIN32_EXECUTABLE TRUE
+)
 
 # ── CPack (ZIP) ─────────────────────────────────────────────────
 install(TARGETS MapleWallpaper MapleWallpaperConfig

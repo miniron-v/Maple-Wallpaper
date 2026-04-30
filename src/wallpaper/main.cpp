@@ -6,6 +6,7 @@
 #include "api/nexon_api.hpp"
 #include "cache/disk_cache.hpp"
 #include "core/config.hpp"
+#include "platform/process.hpp"
 #include "platform/tray.hpp"
 #include "platform/wallpaper_host.hpp"
 #include "platform/session_monitor.hpp"
@@ -161,6 +162,13 @@ static void run_main_loop(
 }
 
 int main() {
+    // First run: if no config exists, launch the config app and exit
+    maple::core::ConfigManager cfg_check;
+    if (!cfg_check.load() || cfg_check.config().api_key.empty()) {
+        maple::platform::launch_config_app();
+        return 0;
+    }
+
     auto [screen_w, screen_h] = init_fullscreen_window();
     auto hwnd = static_cast<NativeWindowHandle>(GetWindowHandle());
     bool embedded = try_embed(hwnd, screen_w, screen_h);
