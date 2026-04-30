@@ -140,36 +140,36 @@ static void create_controls(HWND hwnd) {
     constexpr int EH = 24;   // edit height
 
     int y = 15;
-    create_label(hwnd, L"API 키:", LX, y, 100, 20);
+    create_label(hwnd, L"API \xD0A4:", LX, y, 100, 20);
     y += 22;
     g_hwnd_api_key = create_edit(hwnd, ID_EDIT_API_KEY, EX, y, EW, EH);
 
     y += 38;
-    create_label(hwnd, L"캐릭터명:", LX, y, 100, 20);
+    create_label(hwnd, L"\xCE90\xB9AD\xD130\xBA85:", LX, y, 100, 20);
     y += 22;
     g_hwnd_char_name = create_edit(hwnd, ID_EDIT_CHAR_NAME, EX, y, EW, EH);
 
     y += 40;
     g_hwnd_auto_refresh = create_checkbox(
         hwnd, ID_CHECK_AUTO_REFRESH,
-        L"자동 갱신 (분 단위):", LX, y, 190, 22);
+        L"\xC790\xB3D9 \xAC31\xC2E0 (\xBD84 \xB2E8\xC704):", LX, y, 190, 22);
     g_hwnd_refresh_min = create_edit(
         hwnd, ID_EDIT_REFRESH_MIN, LX + 195, y, 60, EH);
 
     y += 32;
     g_hwnd_auto_start = create_checkbox(
         hwnd, ID_CHECK_AUTO_START,
-        L"Windows 시작 시 자동 실행", LX, y, 250, 22);
+        L"Windows \xC2DC\xC791 \xC2DC \xC790\xB3D9 \xC2E4\xD589", LX, y, 250, 22);
 
     y += 45;
     constexpr int BW = 90;
     constexpr int BH = 32;
     int bx = 55;
-    create_button(hwnd, ID_BTN_START, L"시작", bx, y, BW, BH);
+    create_button(hwnd, ID_BTN_START, L"\xC2DC\xC791", bx, y, BW, BH);
     bx += BW + 30;
-    create_button(hwnd, ID_BTN_SAVE, L"저장", bx, y, BW, BH);
+    create_button(hwnd, ID_BTN_SAVE, L"\xC800\xC7A5", bx, y, BW, BH);
     bx += BW + 30;
-    create_button(hwnd, ID_BTN_CLOSE, L"닫기", bx, y, BW, BH);
+    create_button(hwnd, ID_BTN_CLOSE, L"\xB2EB\xAE30", bx, y, BW, BH);
 }
 
 static void set_default_font(HWND hwnd) {
@@ -210,7 +210,7 @@ int WINAPI wWinMain(HINSTANCE hInst, HINSTANCE, LPWSTR, int nShow) {
     wc.cbSize        = sizeof(wc);
     wc.lpfnWndProc   = wnd_proc;
     wc.hInstance      = hInst;
-    wc.hCursor       = LoadCursorW(nullptr, IDC_ARROW);
+    wc.hCursor       = LoadCursorW(nullptr, MAKEINTRESOURCEW(32512));
     wc.hbrBackground = reinterpret_cast<HBRUSH>(COLOR_WINDOW + 1);
     wc.lpszClassName = L"MapleWallpaperConfig";
 
@@ -224,7 +224,7 @@ int WINAPI wWinMain(HINSTANCE hInst, HINSTANCE, LPWSTR, int nShow) {
     AdjustWindowRect(&rc, style, FALSE);
 
     HWND hwnd = CreateWindowExW(
-        0, wc.lpszClassName, L"MapleWallpaper 설정",
+        0, wc.lpszClassName, L"MapleWallpaper \xC124\xC815",
         style,
         CW_USEDEFAULT, CW_USEDEFAULT,
         rc.right - rc.left, rc.bottom - rc.top,
