@@ -18,10 +18,12 @@ find_package(nlohmann_json CONFIG REQUIRED)
 # ── core_lib (STATIC) ──────────────────────────────────────────
 add_library(core_lib STATIC
     src/core/core.cpp
+    src/core/config.cpp
     src/render/render.cpp
     src/character/character.cpp
     src/api/api.cpp
     src/api/maplestory_io.cpp
+    src/api/nexon_api.cpp
     src/cache/cache.cpp
     src/cache/disk_cache.cpp
     src/platform/platform.cpp
