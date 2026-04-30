@@ -1,0 +1,10 @@
+{
+  "name": "maple-wallpaper",
+  "version-string": "0.1.0",
+  "description": "MapleStory character live wallpaper for Windows desktop",
+  "dependencies": [
+    "raylib",
+    "cpr",
+    "nlohmann-json"
+  ]
+}
