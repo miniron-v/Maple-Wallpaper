@@ -21,7 +21,9 @@ add_library(core_lib STATIC
     src/render/render.cpp
     src/character/character.cpp
     src/api/api.cpp
+    src/api/maplestory_io.cpp
     src/cache/cache.cpp
+    src/cache/disk_cache.cpp
     src/platform/platform.cpp
     src/platform/tray.cpp
     src/platform/wallpaper_host.cpp
