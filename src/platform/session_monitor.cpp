@@ -60,6 +60,8 @@ LRESULT CALLBACK session_wnd_proc(HWND hwnd, UINT msg,
 
 } // anonymous namespace
 
+SessionMonitor::SessionMonitor() = default;
+
 SessionMonitor::~SessionMonitor() {
     destroy();
 }

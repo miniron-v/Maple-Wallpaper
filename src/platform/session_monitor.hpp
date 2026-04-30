@@ -10,7 +10,7 @@ struct SessionFlags;
 
 class SessionMonitor {
 public:
-    SessionMonitor() = default;
+    SessionMonitor();
     ~SessionMonitor();
 
     SessionMonitor(const SessionMonitor&) = delete;
